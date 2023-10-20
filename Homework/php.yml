@@ -1,0 +1,10 @@
+- name: Enable php 74
+  shell: yum-config-manager --enable remi-php74
+  when: php_version == 74
+
+- name: Istall php
+  yum:
+    name:
+      - php
+      - php-mysql
+    state: present
